@@ -1,21 +1,20 @@
 ## 脚本说明
 
 1. 已实现功能
-   * 自动完成奋斗季主会场任务及领取奖励、升级建筑、好友助力
-   * 自动完成龙支付分会场任务及领奖
-   * 自动完成车主分会场任务及抽奖
-   * 自动完成主会场天天抽奖
+   * 奋斗季主会场任务及领取奖励、升级建筑、好友助力
+   * 龙支付分会场任务及领奖
+   * 车主分会场任务及抽奖
+   * 主会场天天抽奖
    * 每日一答，随机答题
-   * 自动完成母亲节晒妈活动 开启分享及助力功能
+   * 母亲节晒妈活动 开启分享及助力
+   * 学外汇得实惠活动答题、抽奖及助力
+   * 消保分会场活动消保知识大考验答题、抽奖及助力
+   * 消保分会场活动眼力大考验答题、抽奖及助力
+   * 越花越赚活动每日领奖
+   * 商圈分会场日常任务、助力、抽奖
 2. TODO
-   * 日志功能
    * 消息通知功能
 3. Cookie有效期6小时，使用`keepAlive.py`脚本定时调用活动接口，以延长Cookie有效期，具体持续时长待测试，感谢[龙猪猪](https://github.com/nianyuguai)大佬提供思路
-4. 天天抽奖策略：
-   由于抽奖每次耗费30CC币，奖品多为20CC币、40CC币，使用完10次机会基本上不会亏本，但在于盈利多少问题，经多次测试，中间几次连续抽中40CC币的概率较大，故采用如下抽奖策略
-   * 若已进行抽奖次数小于等于3，则执行抽奖
-   * 剩余次数小于等于7次 总盈利达20 CC币跳出抽奖
-   * 剩余次数大于7次，总盈利达30 CC币跳出抽奖
 
 ## 抓包说明
 
@@ -54,27 +53,57 @@
        "cookie": [
     		//账户1   
            {
-               "XSRF-TOKEN": "eyJpdiI6Ijk4UEhaM01KL3JOWnZDbHsdfJtY3c9PSIsInZhbHVlIjoieURwR1M2dUpQOUxNY28yU3p4cmduQnZTZmk5M01FQms1Z1pRM1QyNFZhaW5PUmdLYkNQWXg3NVhhZ21OSTNNM1NTTDg5eU9qb1h3V0dLWDhLT2ZyZ1JIUkFhbUJWcDl4SzlMaitLbml6QXlFNXlBOUZGdlVzVFlKa3JoNDkxb2EiLCJtYWMiOiI5MmU0YWZjZjdhYzFiMTZhN2ZhYzU0ZGYxZGEwMGU2N2NkODNkYjBlMTNjMTJkNDE3ZGNlMDAwODEwNmNjYzc0In0%3D",
-               "_session": "eyJpdiI6IkwycmV5VDM1ang1Rzk4cFsdfsdkE9PSIsInZhbHVlIjoiOHBqYWFlbXRXS3E5OWVyYS9WZTFxSzRQaU12cG1NZ2lwaU5RVStlN3JFVmdkRE1mQTI1OCtma1FxanFJUTJpMWhkZ01wTHNLa3l5b0FIRGhIMlVSQSszcVJUN1ArMHAzampKbHNpTFNxTkZ3VFpVSXhzMFEydlVoaEtHZGM3MkgiLCJtYWMiOiJkNjA1MTI2MTczZmNiYzQwZmYyNDY3YjAyZjkyYzNhYjA4NTk2YjY0ZTkxZDNlNDBjODY5YzI5ODU4NjNiMzVkIn0%3D"
+               "XSRF-TOKEN": "",
+               "_session": ""
            },
            //账户2
            {
-               "XSRF-TOKEN": "eyJpdiI6IlVIRjVjcWxGOG1hSjFnNEJzbmhEsdfIsInZhbHVlIjoiUjBCRkQwQk1EdmxxdVp4YXF2OGM3S2ZrY2ZySmVkZjhwSnZCcldqY1JNTGZXb3Rja21TM2VQazcvMVlwbzUvV2hFeDR3c0MxWEJIdUp5cWI0VTFMdDh4b3NHU2pabVJwaEF5cE9Hc1d4TkdNRWprZ0VUbktlUEJXM3lBMkNUSHciLCJtYWMiOiJlMDQ4ZjM3YzhkMWNjNGY3NTdhNGZjMWIwNjdlYzBiNzlmZTNhNDc5MTM1OWE4YThkNDRjOTEzYjRhMmQzMmExIn0%3D",
-               "_session": "eyJpdiI6IjhOeXJ3RDdUSzNpTXpmaG1zeGdsS0E9PSIsInZhbHVlIjoiYldXMWVtSktId0hGazcwKzl4alVYRU80VXAwRWVXRzJLZlFpbmdUd0V6SlBZOXl5QkQyOEIxaG9lOFB6N1sdfsdfWhORGZXcTB0clZWaUppMXlHcXpKbDVFMjZHM0MzOVM3RXVhU2lIUTZyU2grTDU5RUpIbnJ4WER4NzV3b24iLCJtYWMiOiJhNmEzZDJhZWE3ZTBkMzIxNjkxNjRhYTBjYjM3ZjE2YWE0Yzc2ZDY5MmFkN2E3YTcyOGI4NDE0MjU1ZDRmNDIxIn0%3D"
+               "XSRF-TOKEN": "",
+               "_session": ""
            }
        ],
        "shareCode": {
-        	//奋斗季互助码   
+            //奋斗季互助码   
            "common": [
-               "37ff922b-ba7b-4fb0-b6f9-c28042297b75",
-               "49675a5f-6efc-4609-8c9f-2163f2a474b1",
-               "b9d117c6-d5b6-48a6-a2a5-164a616c0490"
+              //助力码1
+               "",
+               //助力码2
+               ""
            ],
-        	//母亲节活动互助码   
+            //母亲节活动互助码   
            "motherDay": [
-               "161bb055-25d4-46dc-a029-7aa3e0e333da",
-               "e225f3ca-4216-476e-893c-f43b8a9ededb",
-               "3b37002d-10e5-4c99-8dca-8680bcd15a79"
+               //助力码1
+               "",
+               //助力码2
+               ""
+           ],
+           //学外汇活动互助码   
+           "whcanswer": [
+               //助力码1
+               "",
+               //助力码2
+               ""
+           ],
+           //消保分会场知识大考验活动互助码   
+           "xbanswer": [
+               //助力码1
+               "",
+               //助力码2
+               ""
+           ],
+           //消保分会场眼力大考验活动互助码   
+           "xbpickon": [
+               //助力码1
+               "",
+               //助力码2
+               ""
+           ],
+           //商圈分会场活动互助码   
+           "lctopic": [
+               //助力码1
+               "",
+               //助力码2
+               ""
            ]
        }
    }
@@ -82,10 +111,8 @@
 
 5. 添加定时任务
 
-   ```
-   0 */3 * * * cd /scriptPath/ && python3 keepAlive.py 
-   5 0 * * * cd /scriptPath/ && python3 main.py
-   ```
+   `keepAlive.py`每三小时运行一次
+   `main.py`每天早晨、晚上各运行一次，尽量不要凌晨运行、不要选择整点运行
 
 
 

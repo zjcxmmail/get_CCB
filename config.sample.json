@@ -7,6 +7,11 @@
     ],
     "shareCode": {
         "common": [],
-        "motherDay": []
-    }
+        "motherDay": [],
+        "whcanswer": [],
+        "xbanswer": [],
+        "xbpickon": [],
+        "lctopic": []
+    },
+    "logDir": ""
 }
